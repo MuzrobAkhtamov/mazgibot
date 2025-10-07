@@ -36,7 +36,7 @@ async def send_poll():
 
 # Планировщик с учётом времени UTC+5
 def scheduler():
-    schedule.every(1).minutes.do(lambda: asyncio.run(send_poll()))  # для теста
+    schedule.every().day.at("20:00").do(lambda: asyncio.run(send_poll()))
     while True:
         schedule.run_pending()
         time.sleep(30)
@@ -47,3 +47,4 @@ if __name__ == "__main__":
     print("Бот запущен и ждёт 20:00 по Ташкенту (+5)...")
 
     scheduler()
+

@@ -13,7 +13,7 @@ TOKEN = "8324144752:AAECID28uaChX7SWnlCTGwIHPOw2K_T--EQ"
 GROUP_ID = -1002774414012
 
 bot = Bot(token=TOKEN)
-dp = Dispatcher()
+dp = Dispatcher(bot)
 
 # Устанавливаем часовой пояс UTC+5 (Ташкент)
 TASHKENT_TZ = timezone(timedelta(hours=5))
@@ -45,4 +45,5 @@ def scheduler():
 # Запуск
 if __name__ == "__main__":
     print("Бот запущен и ждёт 20:00 по Ташкенту (+5)...")
+
     scheduler()

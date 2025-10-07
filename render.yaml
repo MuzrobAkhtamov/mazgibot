@@ -1,0 +1,15 @@
+# render.yaml
+services:
+  - type: worker
+    name: mazgibot-worker
+    env: python
+    plan: free
+    repo: https://github.com/MuzrobAkhtamov/mazgibot
+    branch: main
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
+    envVars:
+      - key: TOKEN
+        value: "8324144752:AAECID28uaChX7SWnlCTGwIHPOw2K_T--EQ"
+      - key: GROUP_ID
+        value: "-1002774414012"
